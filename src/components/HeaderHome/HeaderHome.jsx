@@ -54,12 +54,17 @@ export default function HeaderHome() {
                         Hello ! {userLogin.taiKhoan}
                     </span>
                 </button>
-                <button className='text-blue-400 mr-5' onClick={()=> {
-                localStorage.removeItem(USER_LOGIN);
-                localStorage.removeItem(TOKEN_USER);
-                history.push('/home')
-                window.location.reload();
-            }}>Đăng xuất</button>
+                <button
+                    className="text-blue-400 mr-5"
+                    onClick={() => {
+                        localStorage.removeItem(USER_LOGIN)
+                        localStorage.removeItem(TOKEN_USER)
+                        history.push('/home')
+                        window.location.reload()
+                    }}
+                >
+                    Đăng xuất
+                </button>
             </Fragment>
         )
     }
@@ -78,14 +83,14 @@ export default function HeaderHome() {
                     />
                 </NavLink>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
-                    <li className="flex hover:bg-pink-300 rounded-full">
+                    {/* <li className="flex hover:bg-pink-300 rounded-full">
                         <NavLink
                             rel="noopener noreferrer"
                             to="/home"
                             className={({ isActive }) =>
                                 isActive
-                                    ? 'flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400 text-pink-600 text-2xl'
-                                    : 'flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 text-pink-600 text-2xl'
+                                    ? 'flex items-center px-3 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400 text-pink-600 text-xl'
+                                    : 'flex items-center px-3 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 text-pink-600 text-xl'
                             }
                         >
                             Home
@@ -98,7 +103,7 @@ export default function HeaderHome() {
                             className={({ isActive }) =>
                                 isActive
                                     ? 'flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:border-violet-400'
-                                    : 'flex items-center px-4 -mb-1 border-b-2 dark:border-transparent'
+                                    : 'flex items-center px-4 -mb-1 border-b-2 dark:border-transparent text-white'
                             }
                         >
                             News
@@ -110,7 +115,7 @@ export default function HeaderHome() {
                             to="/"
                             className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
                         >
-                            Link
+                            Contact
                         </NavLink>
                     </li>
                     <li className="flex">
@@ -119,9 +124,49 @@ export default function HeaderHome() {
                             to="#"
                             className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
                         >
-                            Link
+                            Movie
                         </NavLink>
-                    </li>
+                    </li> */}
+                    <div
+                        className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                        id="navbar-cta"
+                    >
+                        <ul className="flex text-xl flex-col py-4 pl-20 mt-4 border  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:font-medium md:border-0">
+                            <li>
+                                <a
+                                    href="#"
+                                    className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                                    aria-current="page"
+                                >
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                >
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                >
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                >
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     {renderLogin()}
